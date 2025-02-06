@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Wonderland';
+    src: url('../font/Wonderland.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+ @font-face {
+    font-family: 'Soligand';
+    src: url('../font/Soligant.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Meditative';
+    src: url('../font/meditative.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

@@ -1,0 +1,66 @@
+.mision-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .animated-svg {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .moving-circle {
+    animation: moveCircle 2s infinite alternate ease-in-out;
+  }
+  
+  .rotating-line {
+    transform-origin: center;
+    animation: rotateLine 3s infinite linear;
+  }
+  
+  /* Animación para el círculo */
+  @keyframes moveCircle {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(20px);
+    }
+  }
+  
+  /* Animación para la línea */
+  @keyframes rotateLine {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .mision-container {
+    margin-top: 50px;
+  }
+  
+  .card-container {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Ejemplo de animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
