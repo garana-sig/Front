@@ -5,7 +5,7 @@ function NConformes() {
     { title: "Identificación", colSpan: 10 ,  bgColor: "bg-yellow-600"},
     { title: "Análisis", colSpan: 4,  bgColor: "bg-yellow-400" },
     { title: "Plan de Acción", colSpan: 5,  bgColor: "bg-blue-300" },
-    { title: "Verificación", colSpan: 7,  bgColor: "bg-green-300" },
+    { title: "Verificación", colSpan: 8,  bgColor: "bg-green-300" },
   ];
 
   const subHeaders = [
@@ -20,8 +20,10 @@ function NConformes() {
     { title: " Descripcion de las acciones", colSpan: 1,  bgColor: "bg-blue-200" },
     { title: " Logros esperados", colSpan: 1,  bgColor: "bg-blue-200" },
     { title: " Recursos / Presupuesto", colSpan: 1,  bgColor: "bg-blue-200"},
+    { title: " Responsable", colSpan: 1,  bgColor: "bg-blue-200"},
+
     { title: " Fecha", colSpan: 1,  bgColor: "bg-blue-200" },
-    { title: " Criterios de verificación", colSpan: 1,  bgColor:"bg-blue-200" },
+    { title: " Criterios de verificación", colSpan: 1,  bgColor:"bg-green-200" },
     { title: " Hallazgo de verificación", colSpan: 1,  bgColor: "bg-green-200" },
     
     { title: " Fecha", colSpan: 2,  bgColor: "bg-green-200"},
@@ -48,6 +50,7 @@ function NConformes() {
     { title: "Corrección ", colSpan: 1,  bgColor: "bg-gray-400" },
     { title: "Correctiva", colSpan: 1,  bgColor: "bg-gray-400" },
     { title: "Preventiva", colSpan: 1,  bgColor: "bg-gray-400" },
+    { title: " ", colSpan: 1,  bgColor: "bg-gray-100" },
     { title: " ", colSpan: 1,  bgColor: "bg-gray-100" },
     { title: " ", colSpan: 1,  bgColor: "bg-gray-100" },
     { title: " ", colSpan: 1,  bgColor: "bg-gray-100" },
