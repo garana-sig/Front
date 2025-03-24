@@ -1,12 +1,26 @@
 import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchAcciones } from '../../../store/slices/accionesSlice'
 function Acciones() {
+
+const dispatch = useDispatch();
+const accionesData = useSelector((state) => state.acciones.data);
+const isLoading = useSelector((state) => state.acciones.isLoading); // Opcional, si manejas un estado de carga
+
+useEffect(() => {
+  dispatch(fetchAcciones()); // Llama a la acción para obtener los datos desde el backend
+}, [dispatch]);
+
+if (isLoading) {
+  return <p>Cargando datos...</p>;
+}
   
   const headers = [
     { title: "Identificación", colSpan: 10 ,  bgColor: "bg-yellow-600"},
     { title: "Análisis", colSpan: 4,  bgColor: "bg-yellow-400" },
     { title: "Plan de Acción", colSpan: 5,  bgColor: "bg-blue-300" },
-    { title: "Verificación", colSpan: 8,  bgColor: "bg-green-300" },
+    { title: "Verificación", colSpan: 9,  bgColor: "bg-green-300" },
   ];
 
   const subHeaders = [
@@ -28,6 +42,8 @@ function Acciones() {
     { title: " Hallazgo de verificación", colSpan: 1,  bgColor: "bg-green-200" },
     
     { title: " Fecha", colSpan: 2,  bgColor: "bg-green-200"},
+    { title: " Estado", colSpan: 1,  bgColor: "bg-green-200"},
+
     { title: " Cierre", colSpan: 4,  bgColor: "bg-green-200"},
 
 
@@ -62,6 +78,9 @@ function Acciones() {
     { title: " ", colSpan: 1,  bgColor: "bg-gray-100" },
     { title: "Verificación", colSpan: 1,  bgColor: "bg-gray-400" },
     { title: "Eficacia", colSpan: 1,  bgColor: "bg-gray-400" },
+
+    { title: " ", colSpan: 1,  bgColor: "bg-gray-100" },
+
     { title: "SI", colSpan: 1,  bgColor: "bg-gray-400" },
     { title: "NO ", colSpan: 1,  bgColor: "bg-gray-400" },
     { title: "Auditor", colSpan: 1,  bgColor: "bg-gray-400" },
@@ -71,142 +90,92 @@ function Acciones() {
 
   ];
   
-  const data = [
-   
-    {
-      consecutivo: "0001",
-      fecha: "05/02/2025",
-      proceso: "Calidad",
-      origen: "Interno",
-      descripcionHallazgo: "Fallo en el control de calidad",
-      correccion: "Revisión inmediata",
-      accionCorrectiva: "Capacitación al equipo",
-      accionPreventiva: "Mejora del procedimiento",
-      causas: "Error humano",
-      descripcionAcciones: "Actualizar documentos",
-      logrosEsperados: "Reducción de errores",
-      recursosRequeridos: "Tiempo, capacitación",
-      responsable: "Juan Pérez",
-      fechaPropuesta: "10/02/2025",
-      criteriosVerificacion: "Auditoría interna",
-      hallazgoVerificacion: "Correcto",
-      fechaVerificacion: "15/02/2025",
-      verificacion: "Aprobado",
-      eficacia: "Sí",
-      si: "X",
-      no: "",
-      auditor: "María López"
-    },
-    {
-      consecutivo: "0001",
-      fecha: "05/02/2025",
-      proceso: "Calidad",
-      origen: "Interno",
-      descripcionHallazgo: "Fallo en el control de calidad",
-      correccion: "Revisión inmediata",
-      accionCorrectiva: "Capacitación al equipo",
-      accionPreventiva: "Mejora del procedimiento",
-      causas: "Error humano",
-      descripcionAcciones: "Actualizar documentos",
-      logrosEsperados: "Reducción de errores",
-      recursosRequeridos: "Tiempo, capacitación",
-      responsable: "Juan Pérez",
-      fechaPropuesta: "10/02/2025",
-      criteriosVerificacion: "Auditoría interna",
-      hallazgoVerificacion: "Correcto",
-      fechaVerificacion: "15/02/2025",
-      verificacion: "Aprobado",
-      eficacia: "Sí",
-      si: "X",
-      no: "",
-      auditor: "María López"
-    },
-    {
-      consecutivo: "0001",
-      fecha: "05/02/2025",
-      proceso: "Calidad",
-      origen: "Interno",
-      descripcionHallazgo: "Fallo en el control de calidad",
-      correccion: "Revisión inmediata",
-      accionCorrectiva: "Capacitación al equipo",
-      accionPreventiva: "Mejora del procedimiento",
-      causas: "Error humano",
-      descripcionAcciones: "Actualizar documentos",
-      logrosEsperados: "Reducción de errores",
-      recursosRequeridos: "Tiempo, capacitación",
-      responsable: "Juan Pérez",
-      fechaPropuesta: "10/02/2025",
-      criteriosVerificacion: "Auditoría interna",
-      hallazgoVerificacion: "Correcto",
-      fechaVerificacion: "15/02/2025",
-      verificacion: "Aprobado",
-      eficacia: "Sí",
-      si: "X",
-      no: "",
-      auditor: "María López"
-    }
-    ,
-    {
-      consecutivo: "0001",
-      fecha: "05/02/2025",
-      proceso: "Calidad",
-      origen: "Interno",
-      descripcionHallazgo: "Fallo en el control de calidad",
-      correccion: "Revisión inmediata",
-      accionCorrectiva: "Capacitación al equipo",
-      accionPreventiva: "Mejora del procedimiento",
-      causas: "Error humano",
-      descripcionAcciones: "Actualizar documentos",
-      logrosEsperados: "Reducción de errores",
-      recursosRequeridos: "Tiempo, capacitación",
-      responsable: "Juan Pérez",
-      fechaPropuesta: "10/02/2025",
-      criteriosVerificacion: "Auditoría interna",
-      hallazgoVerificacion: "Correcto",
-      fechaVerificacion: "15/02/2025",
-      verificacion: "Aprobado",
-      eficacia: "Sí",
-      si: "X",
-      no: "",
-      auditor: "María López"
-    }
-    , {
-      consecutivo: "0001",
-      fecha: "05/02/2025",
-      proceso: "Calidad",
-      origen: "Interno",
-      descripcionHallazgo: "Fallo en el control de calidad",
-      correccion: "Revisión inmediata",
-      accionCorrectiva: "Capacitación al equipo",
-      accionPreventiva: "Mejora del procedimiento",
-      causas: "Error humano",
-      descripcionAcciones: "Actualizar documentos",
-      logrosEsperados: "Reducción de errores",
-      recursosRequeridos: "Tiempo, capacitación",
-      responsable: "Juan Pérez",
-      fechaPropuesta: "10/02/2025",
-      criteriosVerificacion: "Auditoría interna",
-      hallazgoVerificacion: "Correcto",
-      fechaVerificacion: "15/02/2025",
-      verificacion: "Aprobado",
-      eficacia: "Sí",
-      si: "X",
-      no: "",
-      auditor: "María López"
-    }
-  ];
+
+  const getColor = (x) => {
+    const uno=new Date(x.fecha)
+    const dos= new Date(x.fecha_propuesta)
+    const dos1= Date.now()
+    const tres= new Date(dos1)
+    const cuatro= x.cierre_si.toUpperCase()
+    const diferenciaDias = (uno.getTime() - tres.getTime()) / (1000 * 60 * 60 * 24);
+    console.log(tres)
+    return cuatro ==="SI"? "⚪⚪🟢": diferenciaDias >= 30 ? "🔴⚪⚪" : 8 > diferenciaDias < 20  ? "⚪🟡⚪" :  "⚪⚪⚪";
+  };
+
+  const data = accionesData?.map((item, i) => {
+  
+    return {
+      consecutivo: String(i + 1).padStart(4, "0"),
+      fecha: item.fecha 
+      ? new Date(item.fecha).toLocaleDateString('es-CO', { 
+          day: '2-digit', 
+          month: '2-digit', 
+          year: 'numeric' 
+        }) 
+      : "N/A",
+      proceso: item.proceso || "N/A",
+      Auditoria:item.origen.toUpperCase() === "AUDITORIA" ? "X" : "",
+      QRS: item.origen.toUpperCase() === "QRS" ? "X" : "",
+      Satisfacción: item.origen.toUpperCase() === "SATISFACCION" ? "X" : "",
+      Autocontrol: item.origen.toUpperCase() === "AUTOCONTROL" ? "X" : "",
+      Analisis: item.origen.toUpperCase() === "ANALISIS_RIESGOS" ? "X" : "",
+      Produc_no_conforme: item.origen.toUpperCase() === "PROD_NO_CONFORME" ? "X" : "",
+      descripcionHallazgo: item.descripcion_hallazgo || "N/A",
+      correccion: item.accion.toUpperCase() === "CORRECCION" ? "X" : "",
+      correctiva: item.accion.toUpperCase() === "CORRECTIVA" ? "X" : "",
+      preventiva: item.accion.toUpperCase() === "PREVENTIVA" ? "X" : "",
+      causas: item.causas || "N/A",
+      descripcionAcciones: item.descripcion_hallazgo || "N/A",
+      logrosEsperados: item.logros_esperados || "N/A",
+      recursosRequeridos: item.recursos_presupuesto || "N/A",
+      responsable: item.responsable || "N/A",
+      fechaPropuesta: item.fecha 
+      ? new Date(item.fecha_propuesta).toLocaleDateString('es-CO', { 
+          day: '2-digit', 
+          month: '2-digit', 
+          year: 'numeric' 
+        }) 
+      : "N/A",
+      
+      criteriosVerificacion: item.criterios_verificacion || "N/A",
+      hallazgoVerificacion: item.hallazgo_verificacion || "N/A",
+      fechaVerificacion: item.fecha_verificacion
+      ? new Date(item.fecha_verificacion).toLocaleDateString('es-CO', { 
+          day: '2-digit', 
+          month: '2-digit', 
+          year: 'numeric' 
+        }) 
+      : "N/A",
+      fechaeficacia: item.fecha_eficacia 
+      ? new Date(item.fecha_eficacia).toLocaleDateString('es-CO', { 
+          day: '2-digit', 
+          month: '2-digit', 
+          year: 'numeric' 
+        }) 
+      : "N/A",
+      estado: getColor(item),
+      si: item.cierre_si.toUpperCase() === "SI" ? "X" : "",
+      no: item.cierre_no.toUpperCase() === "SI" ? "X" : "",
+      auditor: item.auditor || "N/A",
+      observaciones: item.observaciones || ""
+    };
+  }) || [];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 8;
+  const totalPages = Math.ceil(data.length / rowsPerPage);
+  const currentData = data.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
 
 
   return (
     
    
    
-<div className="relative overflow-x-auto overflow-y-auto flex items-center justify-center h-screen translate-y-[-50px] bg-gray-100 overflow-hidden">
- 
+    <div className="p-4 bg-gray-100">
+      <h2 className="text-2xl font-bold mb-4 text-center">Acciones de Mejora</h2>
 
- <div className="overflow-x-auto p-4">
- <h2 className="text-4xl font-bold mb-4 text-center">Acciones de Mejora</h2>
-      <table className="min-w-full border border-gray-300 text-sm">
+      <div className="max-w-screen-lg mx-auto overflow-x-auto border border-gray-300 rounded-lg shadow-md">
+        <table className="min-w-max w-full border-collapse">
         <thead>
           <tr>
             {headers.map((header, index) => (
@@ -225,21 +194,39 @@ function Acciones() {
           </tr>
         </thead>
         <tbody>
-          {data.map((row, rowIndex) => (
-            <tr key={rowIndex} className="border">
-              {Object.values(row).map((cell, colIndex) => (
-                <td key={colIndex} className="border px-2 py-1 text-center">{cell || "-"}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
+            {currentData.map((row, rowIndex) => (
+              <tr key={rowIndex} className="border">
+                {Object.values(row).map((cell, colIndex) => (
+                  <td key={colIndex} className="border px-2 py-1 text-center whitespace-nowrap">
+                    {cell || "-"}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
       </table>
 
   
 
     </div>
-</div>
-
+    <div className="flex justify-center mt-4">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          className="px-3 py-1 mx-1 bg-gray-300 rounded disabled:opacity-50"
+          disabled={currentPage === 1}
+        >
+          Anterior
+        </button>
+        <span className="px-3 py-1 bg-gray-200 rounded">Página {currentPage} de {totalPages}</span>
+        <button
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          className="px-3 py-1 mx-1 bg-gray-300 rounded disabled:opacity-50"
+          disabled={currentPage === totalPages}
+        >
+          Siguiente
+        </button>
+      </div>
+    </div>
   )
 }
 

@@ -4,6 +4,7 @@ import Modulo from "../Modulo";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import LlenarFormato from "./LlenarFormato";
 import MedicionHome from './MedicionHome'
+import ResultadosCharts from "./ResultadosCharts";
 
 
 function ModuleMedicion() {
@@ -25,7 +26,7 @@ function ModuleMedicion() {
         {
           icon: BadgeCheck,
           label: "Resultados",
-          onClick: () => navigate("/sig/estructura"),
+          onClick: () => navigate("/mys/resultados"),
         },
         ,
         {
@@ -41,6 +42,8 @@ function ModuleMedicion() {
   {/** Rutas Ppales */}
   <Route index element= {<MedicionHome/>} />
   <Route path='ejemplo' element={<LlenarFormato />} />
+  <Route path='resultados' element={<ResultadosCharts />} />
+
  </Routes>
     </Modulo>
   )

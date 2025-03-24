@@ -23,6 +23,7 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.2",
     "react-ui-cards": "^3.1.0",
+    "recharts": "^2.15.1",
     "reselect": "^5.1.1"
   },
   "devDependencies": {
