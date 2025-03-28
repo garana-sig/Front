@@ -171,8 +171,8 @@ if (isLoading) {
     
    
    
-    <div className="p-4 bg-gray-100">
-      <h2 className="text-2xl font-bold mb-4 text-center">Acciones de Mejora</h2>
+    <div className="p-4 bg-gray-100 font-wonderlandPro">
+      <h2 className="text-2xl mb-4 text-center">Acciones de Mejora</h2>
 
       <div className="max-w-screen-lg mx-auto overflow-x-auto border border-gray-300 rounded-lg shadow-md">
         <table className="min-w-max w-full border-collapse">

@@ -40,7 +40,7 @@ function LoginAside() {
     };
 
     return (
-        <aside className="w-45 mt-14 p-4 top-3 bg-gradient-to-b from-[#6dbd96]  to-[#c8d4bc] shadow-md min-h-screen fixed right-0">
+        <aside className="w-45 mt-14 p-4 top-3 bg-gradient-to-b from-[#6dbd96]  to-[white] shadow-md min-h-screen fixed right-0">
             <h2 className="text-l font-bold text-[white] mb-2">Inicio de Sesión</h2>
             
             {error && (

@@ -16,6 +16,7 @@ function Sidebar() {
   const [openMenu, setOpenMenu] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const menuItems = [
+  
     {
       icon: FileText,
       label: "SIG",
@@ -96,14 +97,14 @@ function Sidebar() {
       {/* Sidebar */}
       <div
         className={`
-        font-meditative text-4xl fixed left-0 top-16 h-full w-64 
-        bg-gradient-to-b from-[#6dbd96] via-[#8fa665] to-[#c8d4bc] 
-        text-[#2e5244] overflow-y-auto z-40 transition-transform duration-300 ease-in-out
+        font-wonderlandPro  fixed left-0 top-16 h-full w-72 
+       bg-gradient-to-b from-[#6dbd96]  to-[white] overflow-y-auto z-40 transition-transform duration-300 ease-in-out
         ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }
       `}
       >
+        <br></br>
         <div className="flex flex-col space-y-2 p-4">
           {menuItems.map((item, index) => (
             <div key={index} className="rounded-lg overflow-hidden">

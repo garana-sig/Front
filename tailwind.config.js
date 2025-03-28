@@ -9,7 +9,8 @@ export default {
       fontFamily: {
         wonderland: ['Wonderland', 'sans-serif'], // Define la fuente personalizada
         soligand: ['Soligand', 'sans-serif' ],
-        meditative: ['Meditative', 'sans-serif' ]
+        meditative: ['Meditative', 'sans-serif' ],
+        wonderlandPro: ['WonderlandPro', 'sans-serif' ]
       },
     
     },
