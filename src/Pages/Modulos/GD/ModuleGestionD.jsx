@@ -24,14 +24,10 @@ function ModuleGestionD() {
       },
       {
         icon: ListFilterPlus,
-        label: "Listado Maestro",
+        label: "Listado Maestro - Revisiones",
         onClick: () => navigate("/sig/estructura"),
       },
-      {
-        icon: ShieldCheck,
-        label: "Revisión",
-        onClick: () => navigate("/sig/estructura"),
-      },
+     
     ];
 
   return (

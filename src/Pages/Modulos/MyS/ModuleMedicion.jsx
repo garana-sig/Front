@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import LlenarFormato from "./LlenarFormato";
 import MedicionHome from './MedicionHome'
 import ResultadosCharts from "./ResultadosCharts";
+import IndicadoresDashboard from "./IndicadoresDashboard";
 
 
 function ModuleMedicion() {
@@ -21,7 +22,7 @@ function ModuleMedicion() {
         {
           icon: FileChartColumnIncreasing,
           label: "Datos",
-          onClick: () => navigate("/mys/ejemplo"),
+          onClick: () => navigate("/mys/datos"),
         },
         {
           icon: BadgeCheck,
@@ -43,6 +44,8 @@ function ModuleMedicion() {
   <Route index element= {<MedicionHome/>} />
   <Route path='ejemplo' element={<LlenarFormato />} />
   <Route path='resultados' element={<ResultadosCharts />} />
+  <Route path='datos' element={<IndicadoresDashboard />} />
+
 
  </Routes>
     </Modulo>

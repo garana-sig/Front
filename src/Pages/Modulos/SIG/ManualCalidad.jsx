@@ -4,7 +4,7 @@ function ManualCalidad() {
   const pdfUrl = manual;
 
   return (
-    <div>
+    <div className='ml-10'>
       <h1 className="text-2xl font-bold mb-4">Manual de Calidad</h1>
       
       {/* Visualización del PDF */}
