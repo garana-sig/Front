@@ -2,7 +2,7 @@ import DocumentTable from "../../../../../Components/DocumentTable"
 
 function FormatosAdministrativa() {
   return (
-    <DocumentTable titulo="Formatos" proceso="Gestión Administrativa" />
+    <DocumentTable titulo="Formatos" proceso="DIRECCION Y PLANEACION ESTRATEGICA" />
   )
 }
 

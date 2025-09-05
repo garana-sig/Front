@@ -6,21 +6,18 @@ import PrivateLayout from "../Layouts/PrivateLayout";
 
 // Páginas de Plataforma Estratégica
 import NotFound from "../Pages/NotFound";
-import Vision from "../Pages/PE/Vision";
-import Valores from "../Pages/PE/Valores";
 import Home from "../Pages/Home";
-import Mision from "../Pages/PE/Mision";
 import ModuleSig from "../Pages/Modulos/SIG/ModuleSig";
 import { useAuth } from "../Context/AuthContext";
 import CurvedNavigator from "../Components/Private/CurvedNavigator";
-import ManualCalidad from "../Pages/Modulos/SIG/ManualCalidad";
 import ModuleMC from "../Pages/Modulos/MC/ModuleMC";
 import ModulePE from "../Pages/PE/ModulePE";
-import EstructuraDocumental from "../Pages/Modulos/SIG/EstructuraDocumental";
 import ModuleMedicion from "../Pages/Modulos/MyS/ModuleMedicion";
 import ModuleSST from "../Pages/Modulos/SST/ModuleSST";
 import ModuleGestionD from "../Pages/Modulos/GD/ModuleGestionD";
-import ModuleBienestar from "../Pages/PE/Bienestar/ModuleBienestar";
+import Mision from "../Garbage.May/Mision";
+import Vision from "../Garbage.May/Vision";
+import Valores from "../Garbage.May/Valores";
 
 // Componente de protección de rutas
 // eslint-disable-next-line react/prop-types
@@ -76,7 +73,6 @@ const AppRoutes = () => {
         <Route path="/mc/*" element={<ModuleMC />} />
         <Route path="/mys/*" element={<ModuleMedicion />} />
         <Route path="/PlanE/*" element={<ModulePE />} />
-        <Route path="/bien/*" element={<ModuleBienestar />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>

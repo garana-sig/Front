@@ -26,6 +26,7 @@ import ProcedimientosDireccion from './Procesos/Direccion/ProcedimientosDireccio
 import FormatosClientes from './Procesos/Clientes/FormatosClientes'
 import InstructivosClientes from './Procesos/Clientes/InstructivosClientes'
 import ProcedimientosClientes from './Procesos/Clientes/ProcedimientosClientes'
+import Construyendo from '../../../Layouts/Construyendo'
 
 // Componente base para documentos
 const DocumentosProcess = ({ children }) => {
@@ -48,11 +49,7 @@ function ModuleSig() {
       label: "Volver al Inicio",
       onClick: () => navigate("/dashboard"),
     },
-    {
-      icon: FileText,
-      label: "Manual de Calidad",
-      onClick: () => navigate("/sig/manual-calidad"),
-    },
+ 
     {
       icon: FolderOpenDot,
       label: "Estructura Documental",
@@ -64,10 +61,11 @@ function ModuleSig() {
   return (
     <Modulo title="Sistema Integrado de Gestión" menuItems={menuItems}>
       <Routes>
-        {/* Rutas principales */}
+        {/* Rutas Estructura documental red proceso */}
         <Route index element={<SigHome />} />
         <Route path="manual-calidad" element={<ManualCalidad />} />
-        <Route path="estructura">4
+        
+        <Route path="estructura">
           <Route index element={<EstructuraDocumental />} />
 
           {/* Rutas para calidad y SST */}

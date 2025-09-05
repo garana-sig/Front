@@ -1,9 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Acción asincrónica para obtener datos del backend
+// Obtener la URL base de la API desde las variables de entorno (Vite)
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
+// Acción asíncronica para obtener datos del backend
 export const fetchAcciones = createAsyncThunk("acciones/fetchAcciones", async () => {
-  const response = await axios.get("http://localhost:3000/acciones-mejora/");
+  const response = await axios.get(`${API_URL}/acciones-mejora/`);
   return response.data; // Suponiendo que la API devuelve un array de acciones
 });
 

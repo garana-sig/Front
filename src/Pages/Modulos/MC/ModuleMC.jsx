@@ -3,7 +3,6 @@ import { ChartNoAxesCombined, CircleFadingArrowUp,  Home, RefreshCwOff, ReplaceA
 import Modulo from './../Modulo';
 import NConformes from './NConformes';
 import RevisadoxDireccion from './RevisadoxDireccion';
-import RevisionIndicadores from './RevisionIndicadores';
 import Acciones from './Acciones';
 import MCHome from './MCHome';
 
@@ -69,7 +68,6 @@ function ModuleMC() {
           <Route path="acciones" element={<Acciones />} />
           <Route path="NoConformes" element={<NConformes />} />
           <Route path="RxD" element={<RevisadoxDireccion />} />
-          <Route path="Rev_Indicadores" element={<RevisionIndicadores />} />
 
 
         </Routes>

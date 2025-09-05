@@ -1,11 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// Obtener la URL base de la API desde las variables de entorno (Vite)
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 // Obtener indicadores
 export const fetchMandoIntegral = createAsyncThunk(
   "mandoIntegral/fetchData",
   async () => {
-    const response = await axios.get("http://localhost:3000/mando-integral");
+    const response = await axios.get(`${API_URL}/mando-integral`);
     return response.data;
   }
 );
@@ -16,22 +19,21 @@ export const updateMandoIntegral = createAsyncThunk(
   async ({updatedIndicator, id}) => {
   
     console.log("llega desde el fron", id)
-    const response = await fetch(`http://localhost:3000/mando-integral/${id}`, {
+    const response = await fetch(`${API_URL}/mando-integral/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedIndicator), // 🔹 Envía todo el objeto actualizado
+      body: JSON.stringify(updatedIndicator), // 📹 Envía todo el objeto actualizado
     });
 
     if (!response.ok) {
       throw new Error("Error al actualizar el indicador");
     }
 
-    return await response.json(); // 🔹 Retorna el objeto actualizado
+    return await response.json(); // 📹 Retorna el objeto actualizado
   }
 );
-
 
 const MandoIntegralSlice = createSlice({
     name: "mandoIntegral",
